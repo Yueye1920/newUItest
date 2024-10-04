@@ -7,10 +7,19 @@ from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+driver = webdriver.Chrome()
+driver.get("http://120.25.127.201:18001/user/login.html")
+driver.maximize_window()
+
+
 """
 强制等待
 time.sleep()
 """
+
+# 强制等待
+# time.sleep(10)
+
 
 """
 隐式等待,全局适用，10秒等待页面加载时间，超过10秒就不等了
@@ -21,33 +30,19 @@ time.sleep()
 driver.implicitly_wait(10)
 """
 
-"""
-显示等待
-
-
-WebDriverWait(driver, 10).until()
-"""
-
-
-driver = webdriver.Chrome()
-driver.get("http://120.25.127.201:18001/user/login.html")
-driver.maximize_window()
-
-# 强制等待
-# time.sleep(10)
-
 # 隐式等待
 # driver.implicitly_wait(10)
 
-# 显示等待
+
 """
+显示等待
+优点：运行效率高，节省时间，不需要等到其他元素都到位
+缺点：写的代码长
+注意：需要使用time.sleep时用显示等待
+WebDriverWait(driver, 10).until()
+
 WebDriverWait(driver, timeout,poll_frequency,ignored_exceptions).until()
-driver:浏览器驱动
-timeout:
-poll_frequency:
-ignored_exceptions:
-"""
-"""
+
 WebDriverWait有两个方法，until() 和 until_not()
 显示等待需要每次设置
 优化代码运行时间
