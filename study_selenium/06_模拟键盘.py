@@ -30,7 +30,7 @@ element=driver.find_element(By.ID, "searchKey")
 ActionChains(driver).move_to_element(element).click_and_hold().send_keys("abc").perform()
 
 
-# 键盘操作,按下shift
+# 键盘操作,key_down按下shift(key_down松开)
 ActionChains(driver).key_down(Keys.SHIFT).perform()
 
 # 释放所以Action
@@ -39,3 +39,9 @@ ActionBuilder(driver).clear_actions()
 # 键盘操作,未释放大写Z，释放是小写z
 ActionChains(driver).send_keys("z").perform()
 time.sleep(3)
+
+"""
+move_to_element(element)移动到元素上
+send_keys("abc")
+key_down(Keys.SHIFT)
+"""
