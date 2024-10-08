@@ -38,9 +38,10 @@ element=WebDriverWait(driver, 3).until(EC.visibility_of(driver.find_element
     (By.XPATH,"//input[@id='btnLogin']")))
 element.click()
 
-#
+#presence_of_all_elements_located 检查元素是否存在于页面
 element=WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located(
     (By.LINK_TEXT,book)))
+
 
 
 
