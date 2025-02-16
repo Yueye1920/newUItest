@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome()
-driver.get("http://120.25.127.201:18001/")
+driver.get("http://novel.hctestedu.com/")
 driver.maximize_window()
 
 

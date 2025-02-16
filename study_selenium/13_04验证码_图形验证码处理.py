@@ -11,6 +11,10 @@ driver.maximize_window()
 
 driver.get("http://120.25.127.201:18001/user/register.html")
 
+"""
+需要提前安装tesseract-ocr程序，并配置环境变量
+
+"""
 # 将验证码保存到本地
 element_yzm=driver.find_element(By.CLASS_NAME,"code_pic")
 element_yzm.screenshot("yzm/yzm.png")
