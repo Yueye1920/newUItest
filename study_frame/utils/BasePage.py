@@ -4,8 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from study_frame.driver.driver_download import Chrome_driver
 
 class SeleniumHelper:
-    def __init__(self):
-        driver = Chrome_driver().chrome_base()
+    def __init__(self,driver):
         self.driver = driver
 
 
@@ -80,6 +79,28 @@ class SeleniumHelper:
         :return: 找到的元素，如果未找到则返回 None。
         """
         return self.find_element(By.ID, value, timeout)
+
+    def id_send(self, value,text,timeout=10):
+        """
+        通过 ID 定位单个元素并输入。
+
+        :param value: 元素的 ID 值。
+        :param text: 输入的文本
+        :param timeout: 最大等待时间，默认为 10 秒。
+        :return: 找到的元素，如果未找到则返回 None。
+        """
+        return self.find_element(By.ID, value, timeout).send_keys(text)
+
+    def id_click(self, value,timeout=10):
+        """
+        通过 ID 定位单个元素并点击。
+
+        :param value: 元素的 ID 值。
+        :param timeout: 最大等待时间，默认为 10 秒。
+        :return: 找到的元素，如果未找到则返回 None。
+        """
+        return self.find_element(By.ID, value, timeout).click()
+
 
     def class_name(self, value, timeout=10):
         """
